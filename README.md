@@ -44,6 +44,14 @@ To run this code, add the following via Swift Package Manager:
 
 ### File Structure & Explanations
 
+`info.plist`
+
+- Ensure support for `.txt`, `.md`, `.sh`, `.swift`, `.py`
+
+- Add iCloud capabilities
+
+- Enable App Sandbox with User Selected File (Read/Write) and iCloud capabilities in Xcode
+
 `SimpleTextEditorApp.swift`
 
 - Customizes the menu bar with File commands and adds "Text" and "Export" menus.
