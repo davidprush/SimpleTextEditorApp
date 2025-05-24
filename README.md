@@ -72,6 +72,14 @@ To run this code, add the following via Swift Package Manager:
 
 - Synced `autosaveEnabled`, `highlightrTheme`, and `iCloudSyncEnabled` with `NSUbiquitousKeyValueStore` for iCloud persistence.
 
+`CloudSyncManager.swift`
+
+- Manages iCloud synchronization for documents and settings.
+
+- Uses `NSMetadataQuery` to monitor iCloud Drive for supported file types.
+
+- Syncs settings (autosave, theme, iCloud sync) via `NSUbiquitousKeyValueStore`.
+
 `ContentView.swift`
 
 - Uses `CodeTextView` (below) for editing with syntax highlighting.
