@@ -60,6 +60,8 @@ To run this code, add the following via Swift Package Manager:
 
 - Includes a `Settings` scene for user preferences.
 
+- Added a `CloudSyncManager` as a `@StateObject` to handle iCloud synchronization, passed to `ContentView` and `SettingsView` via `environmentObject`
+
 `TextDocument.swift`
 
 - Supports multiple file types and detects the language for syntax highlighting.
