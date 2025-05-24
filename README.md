@@ -54,7 +54,7 @@ To run this code, add the following via Swift Package Manager:
 
 - Enable App Sandbox with User Selected File (Read/Write) and iCloud capabilities in Xcode
 
-`SimpleTextEditorApp.swift`
+#### `SimpleTextEditorApp.swift`
 
 - Customizes the menu bar with File commands and adds "Text" and "Export" menus.
 
@@ -64,7 +64,7 @@ To run this code, add the following via Swift Package Manager:
 
 - Added a `CloudSyncManager` as a `@StateObject` to handle iCloud synchronization, passed to `ContentView` and `SettingsView` via `environmentObject`
 
-`TextDocument.swift`
+#### `TextDocument.swift`
 
 - Supports multiple file types and detects the language for syntax highlighting.
 
@@ -74,7 +74,7 @@ To run this code, add the following via Swift Package Manager:
 
 - Synced `autosaveEnabled`, `highlightrTheme`, and `iCloudSyncEnabled` with `NSUbiquitousKeyValueStore` for iCloud persistence.
 
-`CloudSyncManager.swift`
+#### `CloudSyncManager.swift`
 
 - Manages iCloud synchronization for documents and settings.
 
@@ -82,7 +82,7 @@ To run this code, add the following via Swift Package Manager:
 
 - Syncs settings (autosave, theme, iCloud sync) via `NSUbiquitousKeyValueStore`.
 
-`ContentView.swift`
+#### `ContentView.swift`
 
 - Uses `CodeTextView` (below) for editing with syntax highlighting.
 
@@ -96,21 +96,19 @@ To run this code, add the following via Swift Package Manager:
 
 - Calls `Linter.lint` on text changes to perform syntax checking.
 
-`CodeTextView.swift`
-
 - Wraps `NSTextView` for syntax highlighting (via `Highlightr`), line numbers, and a native find bar.
 
 - Debounces highlighting updates to optimize performance.
 
 - Supports font size adjustments and theme changes via notifications.
 
-`Linter.swift`
+#### `Linter.swift`
 
 - Provides basic linting rules for Swift (semicolons), Python (indentation), Bash (quotes), and Markdown (headers).
 
 - Returns error messages with line numbers for display in the UI.
 
-`SettingsView.swift`
+#### `SettingsView.swift`
 
 - Provides a settings panel to toggle autosave and select `Highlightr` themes.
 
