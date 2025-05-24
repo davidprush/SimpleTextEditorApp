@@ -102,6 +102,12 @@ To run this code, add the following via Swift Package Manager:
 
 - Supports font size adjustments and theme changes via notifications.
 
+`Linter.swift`
+
+- Provides basic linting rules for Swift (semicolons), Python (indentation), Bash (quotes), and Markdown (headers).
+
+- Returns error messages with line numbers for display in the UI.
+
 `SettingsView.swift`
 
 - Provides a settings panel to toggle autosave and select `Highlightr` themes.
