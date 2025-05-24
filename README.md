@@ -44,7 +44,60 @@ To run this code, add the following via Swift Package Manager:
 
 - `Down`: https://github.com/johnxnguyen/Down.git (for Markdown rendering).
 
-## File Structure & Explanations
+## Recommended Project Tree Structure
+```
+SimpleTextEditor/
+├── SimpleTextEditor.xcodeproj/           # Xcode project directory
+│   ├── project.pbxproj                   # Xcode project configuration
+│   └── xcshareddata/
+│       └── xcschemes/
+│           └── SimpleTextEditor.xcscheme # Build scheme for the app
+├── Sources/                              # Source code for the main app
+│   ├── Models/                           # Data models and related logic
+│   │   └── TextDocument.swift            # Document model for file handling
+│   ├── Views/                            # SwiftUI views for the UI
+│   │   ├── ContentView.swift             # Main editor UI with text editor and preview
+│   │   ├── SettingsView.swift            # Settings UI for user preferences
+│   │   └── CodeTextView.swift            # NSTextView wrapper for advanced text editing
+│   ├── Utilities/                        # Helper classes and functions
+│   │   ├── CloudSyncManager.swift        # Manages iCloud synchronization
+│   │   ├── Linter.swift                  # Rule-based linter for syntax checking
+│   │   └── FileTypeDetector.swift        # Detects file types and languages (new)
+│   ├── App/                              # App entry point and configuration
+│   │   └── SimpleTextEditorApp.swift     # Main app entry point
+│   └── Extensions/                       # Swift extensions for reusability
+│       └── String+Extensions.swift       # String utility extensions (new)
+├── Assets.xcassets/                      # Asset catalog for images and icons
+│   ├── AppIcon.appiconset/               # App icon for macOS
+│   │   └── Contents.json
+│   ├── Images/                           # Custom images (e.g., toolbar icons)
+│   │   └── Contents.json
+│   └── Colors/                           # Custom colors (e.g., for UI theming)
+│       └── Contents.json
+├── Resources/                            # Additional resources (e.g., sample files)
+│   └── sample.swift                      # Sample Swift file for theme preview
+├── Tests/                                # Unit and UI tests
+│   ├── UnitTests/
+│   │   ├── TextDocumentTests.swift       # Tests for TextDocument model
+│   │   ├── LinterTests.swift             # Tests for linter logic
+│   │   └── CloudSyncManagerTests.swift   # Tests for iCloud sync (new)
+│   └── UITests/
+│       └── SimpleTextEditorUITests.swift # UI tests for the editor (new)
+├── Documentation/                        # Project documentation
+│   ├── README.md                         # Project overview and setup instructions
+│   ├── CHANGELOG.md                      # Tracks version changes
+│   └── ARCHITECTURE.md                   # Describes app architecture (new)
+├── Scripts/                              # Build and utility scripts
+│   └── format-code.sh                    # Script for code formatting (e.g., swift-format) (new)
+├── Package.swift                         # Swift Package Manager configuration (optional)
+├── .gitignore                            # Git ignore file for build artifacts
+├── .swiftlint.yml                        # SwiftLint configuration for code style (new)
+├── Info.plist                            # App metadata and permissions
+├── SimpleTextEditor.entitlements         # Entitlements for sandbox and iCloud
+└── LICENSE                               # License file (e.g., MIT) (new)
+```
+
+## File Explanations
 
 ### `info.plist`
 
