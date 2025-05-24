@@ -6,6 +6,8 @@ A native macOS text editor using Swift, incorporating both SwiftUI for the moder
 
 *A native macOS app should support opening, editing, and saving text files, with a standard menu bar including File, Edit, Window, and Help options. SwiftUI is ideal for the interface, and since it’s a document-based app, DocumentGroup will handle file operations seamlessly.*
 
+> **Core Features:** Document-based file handling, syntax highlighting (Highlightr), Markdown preview, autosave, custom menus, native find bar, line numbers, and export options (HTML, PDF, Markdown, RTF).
+
 ## Key Components
 
 1. `SimpleTextEditorApp.swift`: The main app entry point, defining the document-based scene. Uses `DocumentGroup` to create a document-based app, initializing new documents with `TextDocument` and displaying them in `ContentView`.
