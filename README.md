@@ -7,10 +7,31 @@ A native macOS app should support opening, editing, and saving text files, with 
 
 ## Key Components
 
-1. `SimpleTextEditorApp.swift`: The main app entry point, defining the document-based scene.
+1. `SimpleTextEditorApp.swift`: The main app entry point, defining the document-based scene. Uses `DocumentGroup` to create a document-based app, initializing new documents with `TextDocument` and displaying them in `ContentView`.
 
-2. `TextDocument.swift`: A struct conforming to `FileDocument` to manage text content and file I/O.
+2. `TextDocument.swift`: A struct conforming to `FileDocument` to manage text content and file I/O. Conforms to `FileDocument`, supporting plain text files (`UTType.plainText`). It reads from and writes to files using UTF-8 encoding.
 
-3. `ContentView.swift`: The primary view containing a `TextEditor` for text input.
+3. `ContentView.swift`: The primary view containing a `TextEditor` for text input. Features a `TextEditor` bound to the document’s text, with a minimum window size and a toolbar showing the character count.
 
+## Text Editor Enhancements
+
+To make the app more powerful and align with macOS conventions, added the following enhancements:
+
+- Markdown Preview: Display rendered Markdown for `.md` files.
+
+- Autosave: Periodically save changes with a user toggle.
+
+- Custom Menus: Add a "Text" menu for find, replace, and font adjustments.
+
+- Syntax Highlighting: Use `Highlightr` with `NSTextView` for code highlighting.
+
+- Line Numbers: Implement a gutter with line numbers.
+
+- Export Options: Support exporting to HTML, PDF, Markdown, and RTF.
+
+- Native Find Bar: Leverage `NSTextView`’s built-in find functionality.
+
+- Custom Themes: Allow theme selection for syntax highlighting.
+
+- Performance Optimization: Debounce highlighting for large documents.
 
