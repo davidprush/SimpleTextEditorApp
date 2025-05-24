@@ -1,4 +1,12 @@
-// AUTHOR: David P. Rush COPYRIGHT: 2025 MIT DATE: 20250524
+/* 
+    AUTHOR: David P. Rush 
+    COPYRIGHT: 2025 MIT 
+    DATE: 20250524
+    PURPOSE: This file defines the app’s structure, sets up the document-based architecture, 
+    customizes the menu bar, and provides a settings scene. It initializes the CloudSyncManager 
+    to handle iCloud synchronization and ensures all views have access to it.
+*/
+
 import SwiftUI
 
 // The main entry point for the SimpleTextEditor macOS application, defining the app's structure and behavior.
