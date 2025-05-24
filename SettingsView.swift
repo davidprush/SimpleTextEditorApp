@@ -1,3 +1,12 @@
+/* 
+    AUTHOR: David P. Rush 
+    COPYRIGHT: 2025 MIT 
+    DATE: 20250524
+    PURPOSE: Defines the settings UI, allowing users to configure autosave, iCloud sync, 
+    and syntax highlighting themes. The theme preview enhances usability by showing the 
+    visual effect of each theme.
+*/
+
 import SwiftUI
 import AppKit
 import Highlightr
@@ -34,35 +43,3 @@ struct ThemePreviewView: NSViewRepresentable {
 
     func makeNSView(context: Context) -> NSScrollView {
         let textView = NSTextView()
-        textView.isEditable = false
-        textView.isRichText = false
-        textView.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .regular)
-        let sampleCode = """
-        // Sample Swift code
-        let greeting = "Hello, World!"
-        print(greeting)
-        """
-        textView.string = sampleCode
-
-        let highlighter = Highlightr()
-        highlighter?.setTheme(to: theme)
-        if let attributedString = highlighter?.highlight(sampleCode, as: "swift") {
-            textView.textStorage?.setAttributedString(attributedString)
-        }
-
-        let scrollView = NSScrollView()
-        scrollView.documentView = textView
-        scrollView.hasVerticalScroller = true
-        return scrollView
-    }
-
-    func updateNSView(_ nsView: NSScrollView, context: Context) {
-        if let textView = nsView.documentView as? NSTextView {
-            let highlighter = Highlightr()
-            highlighter?.setTheme(to: theme)
-            if let attributedString = highlighter?.highlight(textView.string, as: "swift") {
-                textView.textStorage?.setAttributedString(attributedString)
-            }
-        }
-    }
-}
