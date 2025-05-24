@@ -1,0 +1,4 @@
+included:
+  - Sources
+disabled_rules:
+  - trailing_whitespace
