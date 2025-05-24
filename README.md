@@ -90,6 +90,10 @@ To run this code, add the following via Swift Package Manager:
 
 - Provides export functions using `NSSavePanel` and AppKit utilities.
 
+- Added `lintErrors` state to display linting issues in the toolbar.
+
+- Calls `Linter.lint` on text changes to perform syntax checking.
+
 `CodeTextView.swift`
 
 - Wraps `NSTextView` for syntax highlighting (via `Highlightr`), line numbers, and a native find bar.
