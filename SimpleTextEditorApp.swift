@@ -3,7 +3,7 @@
     COPYRIGHT: 2025 MIT 
     DATE: 20250524
     PURPOSE: Defines the app’s structure, sets up the document-based architecture, 
-    customizes the menu bar, and provides a settings scene. It initializes the CloudSyncManager 
+    customizes the menu bar, and provides a settings scene. Initializes the CloudSyncManager 
     to handle iCloud synchronization and ensures all views have access to it.
 */
 
