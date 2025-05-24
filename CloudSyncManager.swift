@@ -3,7 +3,7 @@
     COPYRIGHT: 2025 MIT 
     DATE: 20250524
     PURPOSE: Manages iCloud synchronization, monitoring iCloud Drive for documents
-    and syncing settings across devices. It ensures the app integrates seamlessly with 
+    and syncing settings across devices. Ensures the app integrates seamlessly with 
     Apple’s cloud ecosystem.
 */
 
