@@ -1,0 +1,12 @@
+<key>NSUbiquitousContainers</key>
+<dict>
+    <key>iCloud.com.RushSolutions.SimpleTextEditor</key>
+    <dict>
+        <key>NSUbiquitousContainerIsDocumentScopePublic</key>
+        <true/>
+        <key>NSUbiquitousContainerName</key>
+        <string>SimpleTextEditor</string>
+        <key>NSUbiquitousContainerSupportedFolderLevels</key>
+        <string>Any</string>
+    </dict>
+</dict>
