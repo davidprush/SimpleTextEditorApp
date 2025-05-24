@@ -130,7 +130,7 @@ To run this code, add the following via Swift Package Manager:
 
 3. Ensure the app sandbox allows file read/write and iCloud access.
 
-## Proposed Test Cases:
+### Proposed Test Cases:
 
 - **Theme Preview:** Open the Settings window (Cmd+,), select different themes, and verify the preview updates.
 
