@@ -68,6 +68,10 @@ To run this code, add the following via Swift Package Manager:
 
 - Stores autosave and theme settings in `UserDefaults`.
 
+- Added `iCloudSyncKey` for enabling/disabling iCloud sync.
+
+- Synced `autosaveEnabled`, `highlightrTheme`, and `iCloudSyncEnabled` with `NSUbiquitousKeyValueStore` for iCloud persistence.
+
 `ContentView.swift`
 
 - Uses `CodeTextView` (below) for editing with syntax highlighting.
