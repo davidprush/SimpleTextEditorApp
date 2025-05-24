@@ -1,9 +1,10 @@
 # SimpleTextEditorApp
-SimpleTextEditorApp (STEA), a basic text editor as a native macOS app using Swift and SwiftUI, includes standard macOS app functionalities like file handling, menu bar integration, and basic text editing features.
+
+> SimpleTextEditorApp (STEA), a basic text editor as a native macOS app using Swift and SwiftUI, includes standard macOS app functionalities like file handling, menu bar integration, and basic text editing features.
 
 A native macOS text editor using Swift, incorporating both SwiftUI for the modern user interface and AppKit for advanced text editing capabilities. The application will feature standard macOS functionalities—such as file handling, a menu bar, and basic text editing—and include enhancements like Markdown preview, autosave, custom menus, syntax highlighting, line numbers, and export options. 
 
-A native macOS app should support opening, editing, and saving text files, with a standard menu bar including File, Edit, Window, and Help options. SwiftUI is ideal for the interface, and since it’s a document-based app, DocumentGroup will handle file operations seamlessly.
+*A native macOS app should support opening, editing, and saving text files, with a standard menu bar including File, Edit, Window, and Help options. SwiftUI is ideal for the interface, and since it’s a document-based app, DocumentGroup will handle file operations seamlessly.*
 
 ## Key Components
 
@@ -13,25 +14,72 @@ A native macOS app should support opening, editing, and saving text files, with 
 
 3. `ContentView.swift`: The primary view containing a `TextEditor` for text input. Features a `TextEditor` bound to the document’s text, with a minimum window size and a toolbar showing the character count.
 
-## Text Editor Enhancements
+## This text editor offers:
 
-To make the app more powerful and align with macOS conventions, added the following enhancements:
+- Document-Based Architecture: Supports plain text, Markdown, Swift, Python, and shell scripts.
 
-- Markdown Preview: Display rendered Markdown for `.md` files.
+- Syntax Highlighting: Powered by Highlightr with customizable themes.
 
-- Autosave: Periodically save changes with a user toggle.
+- Markdown Preview: Renders Markdown in a split view.
 
-- Custom Menus: Add a "Text" menu for find, replace, and font adjustments.
+- Autosave: Saves changes every 5 seconds, toggled in settings.
 
-- Syntax Highlighting: Use `Highlightr` with `NSTextView` for code highlighting.
+- Custom Menus: Includes "Text" and "Export" options with shortcuts.
 
-- Line Numbers: Implement a gutter with line numbers.
+- Native Find Bar: Built into `NSTextView`.
 
-- Export Options: Support exporting to HTML, PDF, Markdown, and RTF.
+- Line Numbers: Displayed in a gutter.
 
-- Native Find Bar: Leverage `NSTextView`’s built-in find functionality.
+- Export Options: HTML, PDF, Markdown, and RTF formats.
 
-- Custom Themes: Allow theme selection for syntax highlighting.
+- Performance: Debounced highlighting for efficiency.
 
-- Performance Optimization: Debounce highlighting for large documents.
+## Dependencies
+
+To run this code, add the following via Swift Package Manager:
+
+- `Highlightr`: https://github.com/raspu/Highlightr.git (for syntax highlighting).
+
+- `Down`: https://github.com/johnxnguyen/Down.git (for Markdown rendering).
+
+### File Structure & Explanations
+
+`SimpleTextEditorApp.swift`
+
+- Customizes the menu bar with File commands and adds "Text" and "Export" menus.
+
+- Uses notifications to trigger actions in `ContentView`.
+
+- Includes a `Settings` scene for user preferences.
+
+`TextDocument.swift`
+
+- Supports multiple file types and detects the language for syntax highlighting.
+
+- Stores autosave and theme settings in `UserDefaults`.
+
+`ContentView.swift`
+
+- Uses `CodeTextView` (below) for editing with syntax highlighting.
+
+- Shows a Markdown preview toggle for `.md` files using the `Down` library.
+
+- Implements autosave with a 5-second timer, configurable via settings.
+
+- Provides export functions using `NSSavePanel` and AppKit utilities.
+
+`CodeTextView.swift`
+
+- Wraps `NSTextView` for syntax highlighting (via `Highlightr`), line numbers, and a native find bar.
+
+- Debounces highlighting updates to optimize performance.
+
+- Supports font size adjustments and theme changes via notifications.
+
+`SettingsView.swift`
+
+- Provides a settings panel to toggle autosave and select `Highlightr` themes.
+
+- Updates the editor’s appearance when the theme changes.
+
 
