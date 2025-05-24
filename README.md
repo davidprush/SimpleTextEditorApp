@@ -114,4 +114,28 @@ To run this code, add the following via Swift Package Manager:
 
 - Updates the editor’s appearance when the theme changes.
 
+- Added `iCloudSyncEnabled` toggle, disabled if iCloud is unavailable.
 
+- Included `ThemePreviewView` to show a sample Swift code snippet with the selected Highlightr theme.
+
+## Current Testing and Running
+
+### Setup:
+
+1. Add Highlightr and Down via Swift Package Manager.
+
+2. Configure iCloud capabilities in Xcode (entitlements and `Info.plist`).
+
+3. Ensure the app sandbox allows file read/write and iCloud access.
+
+## Proposed Test Cases:
+
+- **Theme Preview:** Open the Settings window (Cmd+,), select different themes, and verify the preview updates.
+
+- **Clickable Line Numbers:** Click line numbers in the gutter, confirm the cursor jumps to the correct line with a brief highlight.
+
+- **Syntax Checking:** Create files with intentional errors (e.g., missing semicolon in Swift, incorrect indentation in Python), verify errors appear in the toolbar and lines are underlined.
+
+- **Cloud Sync:** Enable iCloud sync, save a document, and check if it appears in iCloud Drive on another device. Change settings and verify they sync.
+
+- **Existing Features:** Confirm Markdown preview, autosave, native find bar, export options (HTML, PDF, Markdown, RTF), and syntax highlighting work as expected.
