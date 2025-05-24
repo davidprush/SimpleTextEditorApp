@@ -46,7 +46,7 @@ To run this code, add the following via Swift Package Manager:
 
 ### File Structure & Explanations
 
-`info.plist`
+#### `info.plist`
 
 - Ensure support for `.txt`, `.md`, `.sh`, `.swift`, `.py`
 
