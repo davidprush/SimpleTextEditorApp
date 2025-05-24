@@ -3,7 +3,7 @@
     COPYRIGHT: 2025 MIT 
     DATE: 20250524
     PURPOSE: Defines the document model, handling file reading/writing, language detection, 
-    and settings persistence. It integrates with iCloud for settings sync and supports multiple file types.
+    and settings persistence. Integrates with iCloud for settings sync and supports multiple file types.
 */
 
 import SwiftUI
